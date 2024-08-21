@@ -54,12 +54,12 @@ class Server:
                 data.append(indexed_data[current_index])
                 count += 1
             current_index += 1
-                
-        next_index = current_index if current_index < len(indexed_data) else None
+
+        next = current_index if current_index < len(indexed_data) else None
 
         return {
             "index": index,
-            "next_index": next_index,
+            "next_index": next,
             "page_size": len(data),
             "data": data
         }
