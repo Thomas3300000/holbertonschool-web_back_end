@@ -5,6 +5,9 @@ function countStudents(path) {
     const data = fs.readFileSync(path, 'utf8');
     const lines = data.split('\n');
     const cleanLines = lines.filter((line) => line.trim() !== '');
+    if (cleanLines.length <= 1) {
+      throw new Error('No students found in the database');
+    }
 
     const students = cleanLines.slice(1);
 
